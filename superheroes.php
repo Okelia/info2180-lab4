@@ -63,8 +63,26 @@ $superheroes = [
   ], 
 ];
 
-?>
 
+$displayhero = json_encode($superheroes);
+    if($_SERVER ['REQUEST_METHOD'] == 'POST'){
+    $message = json_decode(file_get_contents('php://input'), true);
+    $forminfo = filter_var($message, FILTER_SANITIZE_STRING);
+    $santize = true;
+    foreach($superheroes as $superhero):
+        if(strtolower($forminfo) == strtolower($superhero['name']) or strtolower($forminfo) == strtolower($superhero['alias'])){
+            $displayhero = $superhero;
+            $santize = false;
+            break;
+        }
+    endforeach;
+    if(!$santize){
+        echo json_encode($displayhero);
+    } else{
+        echo "Hero Not Found";
+    }
+}
+?>
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
