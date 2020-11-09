@@ -1,0 +1,45 @@
+/*CSS*/
+html{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+header{
+    background-color: #4f5bca;
+    padding: 15px;
+}
+body {
+    margin: 0;
+    font-size: 16px;
+}
+main{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+header .container{
+    display: flex;
+    align-items: center;
+}
+header h1{
+    text-align: center;
+    color: #ffffff;
+}
+
+.SearchArea .btn {
+    background-color: rgb(219, 11, 11);
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    margin-left: 30px;
+    
+}
+.SearchArea form{
+    display: flex;
+    align-content: center;
+    justify-content: center; 
+    flex-direction: column;
+}
+.form-group{
+    display: flex;
+    align-content: center;
+    text-align: center;
+}

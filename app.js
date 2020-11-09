@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         e.preventDefault();
         //var url = "http://localhost/info2180-lab4/superheroes.php";
         var heroInput = document.getElementById("hero").value;
-        var namehero = document.getElementsByClassName("realname")[0];
+        var heroname = document.getElementsByClassName("realname")[0];
         var alias = document.getElementsByClassName("alias")[0];
         var biography = document.getElementsByClassName("bio")[0];
        
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
                 }  
             })
             .then(displayhero =>{
-                namehero.innerHTML=displayhero;
+                heroname.innerHTML=displayhero;
             })
         }else{
             fetch("superheroes.php", {
@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
             })
             .then (displayhero => {
                 var superh = JSON.parse(displayhero);
-                console.log(displayhero)
                 var supername= superh["name"];
                 var superalias = superh["alias"];
                 var superbio = superh ["biography"];
-                name.innerHTML = supername;
+                console.log(supername);
+                heroname.innerHTML=supername;
                 alias.innerHTML = superalias;
                 biography.innerHTML = superbio;
             })

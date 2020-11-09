@@ -74,7 +74,7 @@ if($_SERVER ['REQUEST_METHOD'] == 'POST'){
             $displayhero = $superhero;
             $santize = false;
             break;
-        }
+        } 
     endforeach;
     if(!$santize){
         echo json_encode($displayhero);
@@ -89,7 +89,7 @@ if($_SERVER ['REQUEST_METHOD'] == 'POST'){
     endforeach;
     $heroinfo= "</ul>";
     echo $heroinfo;
-} else { echo "Superhero not found";}
+} 
 
  if ($_SERVER ['REQUEST_METHOD'] == 'GET'){
     $trysomething = "<ul>";
@@ -98,6 +98,4 @@ if($_SERVER ['REQUEST_METHOD'] == 'POST'){
      endforeach; 
      echo $trysomething;
  } 
-
- 
  ?>
