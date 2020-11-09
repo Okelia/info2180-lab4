@@ -65,7 +65,7 @@ $superheroes = [
 
 
 $displayhero = json_encode($superheroes);
-    if($_SERVER ['REQUEST_METHOD'] == 'POST'){
+if($_SERVER ['REQUEST_METHOD'] == 'POST'){
     $message = json_decode(file_get_contents('php://input'), true);
     $forminfo = filter_var($message, FILTER_SANITIZE_STRING);
     $santize = true;
@@ -79,12 +79,25 @@ $displayhero = json_encode($superheroes);
     if(!$santize){
         echo json_encode($displayhero);
     } else{
-        echo "Hero Not Found";
+        echo "Superhero not found";
     }
-}
-?>
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+} elseif ($_SERVER ['REQUEST_METHOD'] == 'GET') {
+    $heroinfo = '';
+    $heroinfo .= "<ul>";
+    foreach ($superheroes as $superhero):
+        $heroinfo .= "<li>{$superhero['alias']}</li>";
+    endforeach;
+    $heroinfo= "</ul>";
+    echo $heroinfo;
+} else { echo "Superhero not found";}
+
+ if ($_SERVER ['REQUEST_METHOD'] == 'GET'){
+    $trysomething = "<ul>";
+     foreach ($superheroes as $superhero):
+      $trysomething .= "<li>{$superhero['alias']}</li>";
+     endforeach; 
+     echo $trysomething;
+ } 
+
+ 
+ ?>

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         }else{
             fetch("superheroes.php", {
                 method: 'POST',
-                headers: {'Content-Type' : 'application/json'},
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(heroInput)
             })
             .then(resopnse => {
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
             })
             .then (displayhero => {
                 var superh = JSON.parse(displayhero);
+                console.log(displayhero)
                 var supername= superh["name"];
                 var superalias = superh["alias"];
                 var superbio = superh ["biography"];
