@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
             .then (displayhero => {
                 var superh = JSON.parse(displayhero);
                 var supername= superh["name"];
+                //supername= supername + "<h4>{$superhero['name']}</h4>";
                 var superalias = superh["alias"];
                 var superbio = superh ["biography"];
                 console.log(supername);

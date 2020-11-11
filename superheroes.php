@@ -81,21 +81,23 @@ if($_SERVER ['REQUEST_METHOD'] == 'POST'){
     } else{
         echo "Superhero not found";
     }
-} elseif ($_SERVER ['REQUEST_METHOD'] == 'GET') {
-    $heroinfo = '';
-    $heroinfo .= "<ul>";
+
+} /*elseif ($_SERVER ['REQUEST_METHOD'] == 'GET') {  
+   $heroinfo = '';
     foreach ($superheroes as $superhero):
-        $heroinfo .= "<li>{$superhero['alias']}</li>";
-    endforeach;
-    $heroinfo= "</ul>";
+        $heroinfo .= "<h4>{$superhero['name']}</h4>";
+        $heroinfo .= "<h3>{$superhero['alias']}</h3>";
+        $heroinfo .= "<p>{$superhero['biography']}</p>";
+       endforeach; 
+   
     echo $heroinfo;
-} 
+} */
 
  if ($_SERVER ['REQUEST_METHOD'] == 'GET'){
     $trysomething = "<ul>";
-     foreach ($superheroes as $superhero):
+    foreach ($superheroes as $superhero):
       $trysomething .= "<li>{$superhero['alias']}</li>";
      endforeach; 
      echo $trysomething;
  } 
- ?>
+ ?> 

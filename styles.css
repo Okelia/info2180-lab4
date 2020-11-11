@@ -37,9 +37,18 @@ header h1{
     align-content: center;
     justify-content: center; 
     flex-direction: column;
+    padding: 10px;
 }
 .form-group{
     display: flex;
     align-content: center;
     text-align: center;
 }
+/*.realname{
+    font-size: 20px;
+    
+    
+}
+.alias{
+    font-size: 30px;
+}*/
