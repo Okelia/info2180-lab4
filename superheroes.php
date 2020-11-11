@@ -69,13 +69,20 @@ if($_SERVER ['REQUEST_METHOD'] == 'POST'){
     $message = json_decode(file_get_contents('php://input'), true);
     $forminfo = filter_var($message, FILTER_SANITIZE_STRING);
     $santize = true;
+    
     foreach($superheroes as $superhero):
+        $heroinfo = "";
+        $heroinfon = "<h4>{$superhero['name']}</h4>";
+        $heroinfoa = "<h3>{$superhero['alias']}</h3>";
+        $heroinfob = "<p>{$superhero['biography']}</p>";
+       
         if(strtolower($forminfo) == strtolower($superhero['name']) or strtolower($forminfo) == strtolower($superhero['alias'])){
             $displayhero = $superhero;
             $santize = false;
             break;
         } 
     endforeach;
+    
     if(!$santize){
         echo json_encode($displayhero);
     } else{
