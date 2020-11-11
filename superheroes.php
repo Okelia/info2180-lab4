@@ -86,7 +86,7 @@ if($_SERVER ['REQUEST_METHOD'] == 'POST'){
     if(!$santize){
         echo json_encode($displayhero);
     } else{
-        echo "Superhero not found";
+        echo json_encode("Superhero not found");
     }
 
 } /*elseif ($_SERVER ['REQUEST_METHOD'] == 'GET') {  

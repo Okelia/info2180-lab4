@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         var heroname = document.getElementsByClassName("realname")[0];
         var alias = document.getElementsByClassName("alias")[0];
         var biography = document.getElementsByClassName("bio")[0];
+        
        
         if (heroInput === ''){
             fetch ("superheroes.php")
@@ -36,8 +37,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
                 var superh = JSON.parse(displayhero);
                 var supername= superh["name"];
                 //supername= supername + "<h4>{$superhero['name']}</h4>";
-                var superalias = "A.K.A  " + superh["alias"];
+                var superalias = "A.K.A          " + superh["alias"];
                 var superbio = superh ["biography"];
+                
+
                 console.log(supername);
                 heroname.innerHTML=supername;
                 alias.innerHTML = superalias;
